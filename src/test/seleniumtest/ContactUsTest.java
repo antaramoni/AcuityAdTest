@@ -1,36 +1,42 @@
 package seleniumtest;
 
-import acuity.pages.ContactUsPage;
-import acuity.pages.HomePage;
+import acuityad.pages.ContactUsPage;
+import acuityad.pages.HomePage;
+import com.acuity.framework.base.Base;
 import com.acuity.framework.base.DriverContext;
-import com.acuity.framework.base.FrameworkInitialize;
+import com.acuity.framework.config.ConfigReader;
+import com.acuity.framework.config.Settings;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.IOException;
 
-public class ContactUsTest extends FrameworkInitialize {
+
+public class ContactUsTest extends Base {
+
 
 
     @Before
-    public void Initialize()
+    public void Initialize() throws IOException {
 
-    {
+
+        ConfigReader.PopulateSettings();
 
         String path = System.getProperty("user.dir");
-         //Open the browser
-                System.setProperty("webdriver.chrome.driver", path + "//chromedriver");
-                // System.setProperty("webdriver.chrome.driver",path+"\\chromedriver.exe"); // For windows users
 
-                DriverContext.Driver = new ChromeDriver();
-                DriverContext.Driver.navigate().to("https://www.acuityads.com/");
+        //Open the browser
+        System.setProperty("webdriver.chrome.driver", path + "//chromedriver");
+        // System.setProperty("webdriver.chrome.driver",path+"\\chromedriver.exe"); // For windows users
 
+        DriverContext.Driver = new ChromeDriver();
 
-         /*
-        InitializeBrowser(BrowserType.Chrome);
-        DriverContext.Browser.GoToUrl("https://www.acuityads.com/");
-         */
+        String url = Settings.TestUrl;
+        DriverContext.Driver.navigate().to(url);
+
+     
+
     }
 
     @Test
@@ -44,18 +50,16 @@ public class ContactUsTest extends FrameworkInitialize {
 
         // Submit the Contact us form with required value
         ContactUsPage contactpage = new ContactUsPage();
-       contactpage.ContactUs("test", "test2", "c@gmail.com", "c", "c", "don't reply");
-
+        contactpage.ContactUs("test", "test2", "c@gmail.com", "c", "c", "don't reply");
 
 
     }
 
     @After
-    public void TearDownTest()
-    {
+    public void TearDownTest() {
 
         //Closing the browser
-       // DriverContext.Driver.quit();
+        // DriverContext.Driver.quit();
 
 
     }
