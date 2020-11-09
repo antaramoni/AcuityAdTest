@@ -3,6 +3,7 @@ package seleniumtest;
 import com.acuity.framework.base.DriverContext;
 import com.acuity.framework.config.ConfigReader;
 import com.acuity.framework.config.Settings;
+import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -31,6 +32,16 @@ public class TestInitialize {
         // Navigate to Test url
         DriverContext.Driver.navigate().to(url);
 
+
+
+    }
+
+    @After
+    public void TearDownTest()
+    {
+
+        //Closing the browser
+        DriverContext.Driver.quit();
 
 
     }

@@ -38,7 +38,7 @@ public class HomePage extends BasePage {
     /*--------Foorter section -------------- */
 
     // Footer: Company Privacy Policy link
-    @FindBy(how = How.LINK_TEXT, using = "Company Privacy Policy")
+    @FindBy(how = How.LINK_TEXT, using = "Corporate Privacy Policy")
     public WebElement linkComPolicy;
 
 
@@ -56,13 +56,34 @@ public class HomePage extends BasePage {
     public WebElement linkOptOut;
 
     // Technology Privacy Policy link
-    @FindBy(how = How.LINK_TEXT, using = "Privacy Policy")
-    public WebElement linkPrivacyPolicy;
-
+    @FindBy(how = How.LINK_TEXT, using = "Technology Privacy Policy")
+    public WebElement linkTechPrivacyPolicy;
 
     //Footer: AODA link
     @FindBy(how = How.LINK_TEXT, using = "AODA")
     public WebElement linkAODA;
+
+    //Social Media Footer: Youtube link
+    @FindBy(how = How.CSS, using = "a[href*='youtube.com']")
+    public WebElement linkYoutube;
+
+    //Social Media Footer: Twitter link
+    @FindBy(how = How.CSS, using = "a[href*='twitter.com/acuityads']")
+    public WebElement linkTwitter;
+
+
+    //Social Media Footer: linkedIn link
+    @FindBy(how = How.CSS, using = "a[href*='linkedin.com']")
+    public WebElement linklinkedin;
+
+    //Social Media Footer: Facebook link
+    @FindBy(how = How.CSS, using = "a[href*='facebook.com/acuityads/']")
+    public WebElement linkFacebook;
+
+    //Social Media Footer: Instagram link
+    @FindBy(how = How.CSS, using = "a[href*='instagram.com/acuityads.inc/']")
+    public WebElement linkInstagram;
+
 
 
     // Click on Contact Us button
