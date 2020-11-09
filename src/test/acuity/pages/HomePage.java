@@ -1,4 +1,4 @@
-package acuityad.pages;
+package acuity.pages;
 
 import com.acuity.framework.base.BasePage;
 import org.openqa.selenium.WebElement;

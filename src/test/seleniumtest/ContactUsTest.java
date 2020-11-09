@@ -1,43 +1,16 @@
 package seleniumtest;
 
-import acuityad.pages.ContactUsPage;
-import acuityad.pages.HomePage;
-import com.acuity.framework.base.Base;
-import com.acuity.framework.base.DriverContext;
-import com.acuity.framework.config.ConfigReader;
-import com.acuity.framework.config.Settings;
+import acuity.pages.ContactUsPage;
+import acuity.pages.HomePage;
 import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.io.IOException;
-
-
-public class ContactUsTest extends Base {
 
 
 
-    @Before
-    public void Initialize() throws IOException {
+public class ContactUsTest extends TestInitialize {
 
 
-        ConfigReader.PopulateSettings();
 
-        String path = System.getProperty("user.dir");
-
-        //Open the browser
-        System.setProperty("webdriver.chrome.driver", path + "//chromedriver");
-        // System.setProperty("webdriver.chrome.driver",path+"\\chromedriver.exe"); // For windows users
-
-        DriverContext.Driver = new ChromeDriver();
-
-        String url = Settings.TestUrl;
-        DriverContext.Driver.navigate().to(url);
-
-     
-
-    }
 
     @Test
     public void ContactUs() throws InterruptedException {
@@ -48,9 +21,9 @@ public class ContactUsTest extends Base {
 
         Thread.sleep(2000);
 
-        // Submit the Contact us form with required value
+        // Submit the Contact us form with all value
         ContactUsPage contactpage = new ContactUsPage();
-        contactpage.ContactUs("test", "test2", "c@gmail.com", "c", "c", "don't reply");
+        contactpage.ContactUs("firstnametest", "LastNametest", "t@gmail.com", "acuity", "role1", "don't reply");
 
 
     }
