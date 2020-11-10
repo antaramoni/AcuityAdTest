@@ -8,17 +8,19 @@ Source Folder: src
 
 Test folder: src/test
 
-Test Scripts folder : src/test/seleniumtest
+Test Scripts path : src/test/seleniumtest
 
-Page Objects of web elemnets: src/test/
+Page Objects of web elemnets path : src/test/acuity/pages
 
-Config properties path: src/com/acuity/framework/config
+Config file path (GlobalConfig.properties has the required test params) : src/com/acuity/framework/config
 
 Hook path : src/test/seleniumtest/TestInitialize.java
 
 
 Automated Scenarios:
-Following scenarios have been automated:
+====================
+Following scenarios have been automated (path : src/test/seleniumtest):
+
 - Home page Header should have following links named: Solutions, Insights, News, Company => file: HomeHeaderTest.java
 - Validate the footer has the following clickable links: Contact us, Corporate Privacy policy, Terms & Conditions, Cookie Policy, Opt-out, Technology Privacy Policy, AODA => file : FooterLinkTest.java
 - Checking the social media links at the right bottom corner of footer: Youtube, Twitter. LinkedIn, facebook, Instagram => SocialMediaLinkTest.java
