@@ -16,33 +16,62 @@ public class FooterLinkTest extends TestInitialize {
         JavascriptExecutor jse = (JavascriptExecutor) DriverContext.Driver;
         jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
+        try {
+            // Validate Footer has Corporate Privacy Policy
+            assert (homepage.linkComPolicy.getText().equals("Corporate Privacy Policy"));
+            System.out.println(homepage.linkComPolicy.getText());
+            Thread.sleep(2000);
+        }
+            catch (Exception e){
+                System.out.println(" Corporate Privacy Policy Validation:"+e);
+            }
+        try {
+            // Validate Footer has Terms & Condition Policy
+            assert (homepage.linkTermsCondition.getText().contains("Terms"));
+            System.out.println(homepage.linkTermsCondition.getText());
+            Thread.sleep(2000);
+        }
+        catch (Exception e){
+            System.out.println("Terms & Condition Policy Validation:"+e);
+        }
 
-        // Validate Footer has Corporate Privacy Policy
-        homepage.linkComPolicy.getText().equals("Corporate Privacy Policy");
-        System.out.println(homepage.linkComPolicy.getText());
+        try {
+            // Validate footer has Cookie Policy
+            assert (homepage.linkCookiePolicy.getText().equals("Cookie Policy"));
+            System.out.println(homepage.linkCookiePolicy.getText());
+        }
+        catch (Exception e){
+            System.out.println("Cookie Policy Validation:"+e);
+        }
 
-        // Validate Footer has Terms & Condition Policy
-        homepage.linkTermsCondition.getText().equals("Terms & Condition");
-        System.out.println(homepage.linkTermsCondition.getText());
+        try {
+            // Validate Footer has opt-out link
+            assert (homepage.linkOptOut.getText().equals("Opt-out"));
+            System.out.println(homepage.linkOptOut.getText());
+        }
+        catch (Exception e){
+            System.out.println("opt-out Validation:"+e);
+        }
 
-        // Validate footer has Cookie Policy
-        homepage.linkCookiePolicy.getText().equals("Cookie Policy");
-        System.out.println(homepage.linkCookiePolicy.getText());
+        try {
+            // Validate Footer has Technology Privacy Policy link
+            assert (homepage.linkTechPrivacyPolicy.getText().equals("Technology Privacy Policy"));
+            System.out.println(homepage.linkTechPrivacyPolicy.getText());
+        }
+        catch (Exception e){
+            System.out.println("Technology Privacy Policy Validation:"+e);
+        }
 
-        // Validate Footer has opt-out link
-        homepage.linkOptOut.getText().equals("Opt-out");
-        System.out.println(homepage.linkOptOut.getText());
+        try{
+            // Validate Footer has AODA link
+            assert (homepage.linkAODA.getText().equals("AODA"));
+            System.out.println(homepage.linkAODA.getText());
 
-        // Validate Footer has Technology Privacy Policy link
-        homepage.linkTechPrivacyPolicy.getText().equals("Technology Privacy Policy");
-        System.out.println(homepage.linkTechPrivacyPolicy.getText());
-
-        // Validate Footer has AODA link
-        homepage.linkAODA.getText().equals("AODA");
-        System.out.println(homepage.linkAODA.getText());
-
-        Thread.sleep(2000);
-
+            Thread.sleep(2000);
+        }
+        catch (Exception e){
+            System.out.println("AODA  Validation:"+e);
+        }
     }
 
 }

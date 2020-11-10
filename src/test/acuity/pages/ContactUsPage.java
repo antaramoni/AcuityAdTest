@@ -73,11 +73,6 @@ public class ContactUsPage extends BasePage {
         btnSubmit.submit();
         Thread.sleep(2000);
 
-        ThankYou.getText().equals("Thank You");
-
-
-
-
     }
 
 }

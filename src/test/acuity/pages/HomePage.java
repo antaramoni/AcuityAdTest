@@ -35,14 +35,14 @@ public class HomePage extends BasePage {
     public WebElement linkCompany;
 
 
-    /*--------Foorter section -------------- */
+    /*--------Footer section -------------- */
 
     // Footer: Company Privacy Policy link
     @FindBy(how = How.LINK_TEXT, using = "Corporate Privacy Policy")
     public WebElement linkComPolicy;
 
 
-    // Foorter: Terms & Conditions link
+    // Footer: Terms & Conditions link
     @FindBy(how = How.LINK_TEXT, using = "Terms & Conditions")
     public WebElement linkTermsCondition;
 
@@ -86,7 +86,7 @@ public class HomePage extends BasePage {
 
 
 
-    // Click on Contact Us button
+    // Click on Contact Us button from Home Page
     public void ContactUsButton() {
         btnContactUs.click();
     }

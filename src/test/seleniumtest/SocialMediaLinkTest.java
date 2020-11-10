@@ -17,34 +17,47 @@ public class SocialMediaLinkTest extends TestInitialize {
         JavascriptExecutor jse = (JavascriptExecutor) DriverContext.Driver;
         jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
-        // Validate Youtube is enabled
-        homepage.linkYoutube.isEnabled();
+        try {
+            // Validate Youtube is enabled
+            assert (homepage.linkYoutube.isEnabled());
+        }
+        catch (Exception e){
+            System.out.println("Youtube link  Validation:"+e);
+        }
+        try {
 
-        Thread.sleep(2000);
+            // Validate Twitter is enabled
+            assert (homepage.linkTwitter.isEnabled());
+        }
+        catch (Exception e){
+            System.out.println("Twitter link  Validation:"+e);
+        }
+        try {
 
-        // Validate Youtube is enabled
-        homepage.linkTwitter.isEnabled();
+            // Validate Youtube is enabled
+            assert (homepage.linklinkedin.isEnabled());
+        }
+        catch (Exception e){
+            System.out.println("LinkedIn link  Validation:"+e);
+        }
+       try {
+           // Validate Youtube is enabled
+           assert (homepage.linkFacebook.isEnabled());
+       }
+       catch (Exception e){
+           System.out.println("Facebook link  Validation:"+e);
+       }
+       try {
 
-        Thread.sleep(2000);
+           // Validate Youtube is enabled
+           assert (homepage.linkInstagram.isEnabled());
 
-        // Validate Youtube is enabled
-        homepage.linklinkedin.isEnabled();
-
-        Thread.sleep(2000);
-
-        // Validate Youtube is enabled
-        homepage.linkFacebook.isEnabled();
-
-        Thread.sleep(2000);
-
-        // Validate Youtube is enabled
-        homepage.linkInstagram.isEnabled();
-
-
-
-        Thread.sleep(2000);
-
-
+           // Clicking a social media link
+           homepage.linkInstagram.click();
+       }
+       catch (Exception e){
+           System.out.println("Instagram link  Validation:"+e);
+       }
 
     }
 
